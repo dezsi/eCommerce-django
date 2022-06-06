@@ -51,16 +51,8 @@
                                     <div class="input-group-append">
                                         <a href="{% url 'add_cart' cart_item.product.id%}"  class="btn btn-secondary btn-lg"-
                                            <button type="button" style="color: red;" ><b> + </b></button> </a>
-<!--                                        class="btn btn-light" ->
-                                    </div>
-                                </div>
+
                             </div>
-                        </td>
-                        <td>
-                            <div class="price-wrap">
-                                <var class="price">$ {{cart_item.sub_total }}</var>
-<!--                                <small class="text-muted"> {{ cart_item.product.price }} </small>-->
-                            </div> <!-- price-wrap .// -->
                         </td>
                         <td class="text-right">
                             <a href="{% url 'remove_cart_item' cart_item.product.id%}" class="btn btn-danger">
