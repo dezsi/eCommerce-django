@@ -4,20 +4,18 @@
 
 {%block content %}
 
-<!-- ========================= SECTION PAGETOP ========================= -->
+
 <section class="section-pagetop bg">
     <div class="container">
         {% if 'search' in request.path %}
         <h2 class="title-page">Search Result</h2>
         {%  else %}
-        <h2 class="title-page">eBookSTore</h2>
+        <h2 class="title-page">eBookStore</h2>
         {% endif %}
 
-    </div> <!-- container //  -->
+    </div>
 </section>
-<!-- ========================= SECTION INTRO END// ========================= -->
 
-<!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
     <div class="container">
 
@@ -27,7 +25,7 @@
                 <div class="card">
                     <article class="filter-group">
                         <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+                            <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="btn btn-secondary">
                                 <i class="icon-control fa fa-chevron-down"></i>
                                 <h6 class="title">Categories</h6>
                             </a>
@@ -49,33 +47,33 @@
                         <header class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
                                 <i class="icon-control fa fa-chevron-down"></i>
-                                <h6 class="title">Covers </h6>
+<!--                                <h6 class="title">Covers </h6>-->
                             </a>
                         </header>
                         <div class="filter-content collapse show" id="collapse_4" style="">
                             <div class="card-body">
                                 <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> Softcover </span>
+<!--                                    <input type="checkbox">-->
+                                    <span class="btn btn-light"> "Are you a reader, get the best books here" </span>
                                 </label>
 
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> Hardcover with ImageWrap </span>
-                                </label>
+<!--                                <label class="checkbox-btn">-->
+<!--                                    <input type="checkbox">-->
+<!--                                    <span class="btn btn-light"> Hardcover with ImageWrap </span>-->
+<!--                                </label>-->
 
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light"> Audiobook </span>
-                                </label>
+<!--                                <label class="checkbox-btn">-->
+<!--                                    <input type="checkbox">-->
+<!--                                    <span class="btn btn-light"> Audiobook </span>-->
+<!--                                </label>-->
 
-                                <label class="checkbox-btn">
-                                    <input type="checkbox">
-                                    <span class="btn btn-light">Kindle </span>
+<!--                                <label class="checkbox-btn">-->
+<!--                                    <input type="checkbox">-->
+<!--                                    <span class="btn btn-light">Kindle </span>-->
                                 </label>
-                            </div><!-- card-body.// -->
+                            </div>
                         </div>
-                    </article> <!-- filter-group .// -->
+                    </article>
 
                     <article class="filter-group">
                         <header class="card-header">
@@ -121,7 +119,7 @@
 
 <!--                </div> &lt;!&ndash; card.// &ndash;&gt;-->
 
-            </aside> <!-- col.// -->
+            </aside>
             <main class="col-md-9">
 
                 <header class="border-bottom mb-4 pb-3">
@@ -129,7 +127,7 @@
                         <span class="mr-md-auto"><b>{{ product_count}}</b> items found</span>
 
                     </div>
-                </header><!-- sect-heading -->
+                </header>
 
                 <div class="row">
                     {% if products %}
@@ -140,25 +138,25 @@
 
                                 <a href="{{ product.get_url }}"> <img src="{{ product.images.url}}"></a>
 
-                            </div> <!-- img-wrap.// -->
+                            </div>
                             <figcaption class="info-wrap">
                                 <div class="fix-height">
-                                    <a href="{{ product.get_url }}" class="title">G{{ product.product_name }}e</a>
+                                    <a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
                                     <div class="price-wrap mt-2">
                                         <span class="price">$ {{ product.price}}</span>
-                                    </div> <!-- price-wrap.// -->
+                                    </div>
                                 </div>
                                 <a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details </a>
                             </figcaption>
                         </figure>
-                    </div> <!-- col.// -->
+                    </div>
                     {% endfor%}
                     {%else%}
                     <div>
                         <h2>No result found. Please try again.</h2>
                     </div>
                     {% endif %}
-                </div> <!-- row end.// -->
+                </div>
 
 
 
@@ -187,13 +185,13 @@
 	{% endif %}
 </nav>
 
-            </main> <!-- col.// -->
+            </main>
 
         </div>
 
-    </div> <!-- container .//  -->
+    </div>
 </section>
-<!-- ========================= SECTION CONTENT END// ========================= -->
+
 
 
 {% endblock %}

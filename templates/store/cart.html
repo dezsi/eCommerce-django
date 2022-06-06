@@ -5,7 +5,7 @@
 <section class="section-content padding-y bg">
     <div class="container">
 
-        <!-- ============================ COMPONENT 1 ================================= -->
+
         {% if not cart_items %}
         <div style="text-align: center"> Your shopping cart is empty </div>
         <div style="text-align: center">
@@ -44,21 +44,22 @@
                             <div class="col">
                                 <div class="input-group input-spinner">
                                     <div class="input-group-prepend">
-                                        <a href="{% url 'remove_cart' cart_item.product.id%}" class="btn btn-light"
-                                           <button type="button" style="color: red;"><b>- </b></button> </a>
+                                        <a href="{% url 'remove_cart' cart_item.product.id%}" class="btn btn-secondary btn-lg"-
+                                           <button type="button " style="color: red;" ><b> - </b></button> </a>
                                     </div>
                                     <input type="text" class="form-control" value="{{ cart_item.quantity }}">
                                     <div class="input-group-append">
-                                        <a href="{% url 'add_cart' cart_item.product.id%}" class="btn btn-light"
-                                           <button type="button" style="color: red;" ><b>+</b></button> </a>
+                                        <a href="{% url 'add_cart' cart_item.product.id%}"  class="btn btn-secondary btn-lg"-
+                                           <button type="button" style="color: red;" ><b> + </b></button> </a>
+<!--                                        class="btn btn-light" ->
                                     </div>
-                                </div> <!-- input-group.// -->
-                            </div> <!-- col.// -->
+                                </div>
+                            </div>
                         </td>
                         <td>
                             <div class="price-wrap">
                                 <var class="price">$ {{cart_item.sub_total }}</var>
-                                <small class="text-muted"> {{ cart_item.product.price }} </small>
+<!--                                <small class="text-muted"> {{ cart_item.product.price }} </small>-->
                             </div> <!-- price-wrap .// -->
                         </td>
                         <td class="text-right">
@@ -69,9 +70,9 @@
                     {% endfor%}
                     </tbody>
                 </table>
-            </div> <!-- card.// -->
+            </div>
 
-        </aside> <!-- col.// -->
+        </aside>
         <aside class="col-lg-3">
 
             <div class="card">
@@ -85,26 +86,25 @@
                         <dd class="text-right"> $ {{TVA}}</dd>
                     </dl>
                     <dl class="dlist-align">
-                        <dt>Grand Total:</dt>
+                        <dt>Total:</dt>
                         <dd class="text-right text-dark b"><strong>$ {{grand_total}}</strong></dd>
                     </dl>
                     <hr>
                     <p class="text-center mb-3">
                         <img src="{% static 'C:\Users\Janika\Desktop\eBookStore\misc.png'%}" height="26">
                     </p>
-<!--                    <a href="./place-order.html" class="btn btn-primary btn-block"> Checkout </a>-->
+                    <a href="{% url 'checkout' %}" class="btn btn-secondary"> Checkout </a>
+<!--                    class="btn btn-primary btn-block"-->
                     <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
-                </div> <!-- card-body.// -->
-            </div> <!-- card.// -->
+                </div>
+            </div>
 
-        </aside> <!-- col.// -->
+        </aside>
 
 
-    </div> <!-- row.// -->
-    <!-- ============================ COMPONENT 1 END .// ================================= -->
+    </div>
     {% endif %}
-    </div> <!-- container .//  -->
+    </div>
 </section>
-<!-- ========================= SECTION CONTENT END// ========================= -->
 
 {% endblock %}
